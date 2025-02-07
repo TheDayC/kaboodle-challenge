@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./events
+    image: kaboodle-ui
+    ports:
+      - "8080:80"
+    restart: always
+    depends_on:
+      - api
+  api:
+    build: ./api
+    image: kaboodle-api
+    ports:
+      - "3001:3001"
+    restart: always
