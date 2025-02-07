@@ -37,8 +37,8 @@
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
-            "eslint .",
-            "prettier --write --ignore-unknown ."
+            "eslint",
+            "prettier --write --ignore-unknown"
         ]
     }
 }
