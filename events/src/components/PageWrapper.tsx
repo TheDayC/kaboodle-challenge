@@ -20,7 +20,7 @@ const PageWrapper: FC<PageWrapperProps> = ({ title, children }) => {
                     </Typography>
                 </Container>
             </Box>
-            <Box>
+            <Box sx={{ py: 2 }}>
                 <Container maxWidth="xl">{children}</Container>
             </Box>
         </>

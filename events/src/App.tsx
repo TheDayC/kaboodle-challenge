@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import theme from './theme';
-import HomePage from './pages/Home';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 const App = () => {
     return (
@@ -10,8 +11,8 @@ const App = () => {
             <CssBaseline />
             <Router>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    {/* <Route path="*" element={<NotFoundPage />} /> */}
+                    <Route path="/" element={<Home />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
         </ThemeProvider>
