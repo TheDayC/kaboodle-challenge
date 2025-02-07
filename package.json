@@ -6,7 +6,9 @@
     "scripts": {
         "prepare": "husky",
         "lint:staged:events": "npm --prefix ./events/ run lint:staged",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "docker:build": "docker build -t kaboodle-ui:latest ./events",
+        "docker:run": "docker compose up -d"
     },
     "repository": {
         "type": "git",
@@ -23,5 +25,9 @@
         "@commitlint/config-conventional": "^19.7.1",
         "husky": "^9.1.7",
         "lint-staged": "^15.4.3"
+    },
+    "volta": {
+      "node": "22.13.1",
+      "npm": "11.1.0"
     }
 }
