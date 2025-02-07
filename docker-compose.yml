@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   frontend:
+    build: ./events
     image: kaboodle-ui
     ports:
       - "8080:80"
