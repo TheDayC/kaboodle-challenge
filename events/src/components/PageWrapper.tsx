@@ -13,10 +13,10 @@ const PageWrapper: FC<PageWrapperProps> = ({ title, children }) => {
 
     return (
         <>
-            <Box sx={{ bgcolor: 'primary.main', width: '100%' }}>
+            <Box sx={{ bgcolor: 'black', width: '100%', py: 2 }}>
                 <Container maxWidth="xl">
                     <Typography variant="h2" color="white">
-                        Kaboodle
+                        Kaboodle Challenge
                     </Typography>
                 </Container>
             </Box>
