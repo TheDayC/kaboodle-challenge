@@ -1,0 +1,34 @@
+{
+  "name": "kaboodle-challenge",
+  "version": "1.0.0",
+  "description": "A full stack event application for Kaboode's developer challenge.",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "prettier": "prettier ./src --write",
+    "lint": "eslint .",
+    "lint:staged:events": "npm --prefix ./events/ run lint:staged",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDayC/kaboodle-challenge.git"
+  },
+  "author": "David Connolly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheDayC/kaboodle-challenge/issues"
+  },
+  "homepage": "https://github.com/TheDayC/kaboodle-challenge#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "typescript-eslint": "^8.23.0"
+  }
+}
