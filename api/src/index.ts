@@ -1,14 +1,19 @@
 import express from 'express';
+import eventRoutes from './routes/events';
+import ticketRoutes from './routes/tickets';
+import logger from './utils/logger';
+import { errorLogger, requestLogger } from './middleware/logger';
 
 const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+app.use(requestLogger);
+app.use(errorLogger);
 
-app.get('/', (req, res) => {
-    res.send('Hello, TypeScript + Express!');
-});
+app.use('/events', eventRoutes);
+app.use('/tickets', ticketRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    logger.info(`🚀 Server running on http://localhost:${PORT}`);
 });
