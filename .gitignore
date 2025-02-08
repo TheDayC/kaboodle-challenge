@@ -133,4 +133,4 @@ dist
 logs/
 
 # db
-db/
+api/db/*
