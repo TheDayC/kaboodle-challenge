@@ -130,7 +130,7 @@ dist
 .pnp.*
 
 # logs
-logs/
+api/logs/
 
 # db
-api/db/*
+api/src/db/*.json
