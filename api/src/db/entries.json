@@ -1,84 +1,244 @@
 {
-    "events": [
+  "events": [
+    {
+      "id": 1,
+      "name": "Event 1",
+      "date": "2025-04-01T12:00:00.000Z",
+      "description": "This is a description of event 1.",
+      "tickets": [
         {
-            "id": 1,
-            "name": "Event 1",
-            "date": "2025-04-01T12:00:00.000Z",
-            "description": "This is a description of event 1.",
-            "tickets": [
-                {
-                    "id": 1,
-                    "name": "Ticket 1",
-                    "type": "adult",
-                    "price": 1000,
-                    "fee": 2000,
-                    "availability": "available"
-                },
-                {
-                    "id": 2,
-                    "name": "Ticket 2",
-                    "type": "child",
-                    "price": 500,
-                    "fee": 2000,
-                    "availability": "sold out"
-                },
-                {
-                    "id": 3,
-                    "name": "VIP Pass",
-                    "type": "vip",
-                    "price": 5000,
-                    "fee": 3000,
-                    "availability": "available"
-                },
-                {
-                    "id": 4,
-                    "name": "Early Bird",
-                    "type": "discount",
-                    "price": 800,
-                    "fee": 1500,
-                    "availability": "available"
-                }
-            ]
+          "id": 1,
+          "name": "Ticket 1",
+          "type": "adult",
+          "price": 1000,
+          "fee": 2000,
+          "availability": "available"
         },
         {
-            "id": 2,
-            "name": "Event 2",
-            "date": "2025-05-15T18:30:00.000Z",
-            "description": "This is a description of event 2.",
-            "tickets": [
-                {
-                    "id": 1,
-                    "name": "Ticket 1",
-                    "type": "adult",
-                    "price": 1000,
-                    "fee": 2000,
-                    "availability": "available"
-                },
-                {
-                    "id": 2,
-                    "name": "Ticket 2",
-                    "type": "child",
-                    "price": 500,
-                    "fee": 2000,
-                    "availability": "sold out"
-                }
-            ]
+          "id": 2,
+          "name": "Ticket 2",
+          "type": "child",
+          "price": 500,
+          "fee": 2000,
+          "availability": "sold out"
         },
         {
-            "id": 3,
-            "name": "Event 3",
-            "date": "2025-06-20T15:00:00.000Z",
-            "description": "This is a description of event 3.",
-            "tickets": [
-                {
-                    "id": 1,
-                    "name": "Ticket 1",
-                    "type": "adult",
-                    "price": 1000,
-                    "fee": 2000,
-                    "availability": "available"
-                }
-            ]
+          "id": 3,
+          "name": "VIP Pass",
+          "type": "vip",
+          "price": 5000,
+          "fee": 3000,
+          "availability": "available"
+        },
+        {
+          "id": 4,
+          "name": "Early Bird",
+          "type": "discount",
+          "price": 800,
+          "fee": 1500,
+          "availability": "available"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Event 2",
+      "date": "2025-05-15T18:30:00.000Z",
+      "description": "This is a description of event 2.",
+      "tickets": [
+        {
+          "id": 1,
+          "name": "Ticket 1",
+          "type": "adult",
+          "price": 1000,
+          "fee": 2000,
+          "availability": "available"
+        },
+        {
+          "id": 2,
+          "name": "Ticket 2",
+          "type": "child",
+          "price": 500,
+          "fee": 2000,
+          "availability": "sold out"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Event 3",
+      "date": "2025-06-20T15:00:00.000Z",
+      "description": "This is a description of event 3.",
+      "tickets": [
+        {
+          "id": 1,
+          "name": "Ticket 1",
+          "type": "adult",
+          "price": 1000,
+          "fee": 2000,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "name": "A new event",
+      "date": "2025-02-08T07:05:39.485Z",
+      "description": "A new event description",
+      "tickets": [
+        {
+          "name": "Ticket 1 for adults",
+          "type": "adult",
+          "price": 10,
+          "fee": 2,
+          "availability": "available",
+          "id": "39c8705d-9403-483b-b5d3-b0676f45ddd5"
+        }
+      ],
+      "id": "6599be59-2e2e-4fab-a7cd-b63150eb4052"
+    },
+    {
+      "name": "A new event",
+      "date": "2025-02-08T07:05:39.485Z",
+      "description": "A new event description",
+      "tickets": [
+        {
+          "name": "Ticket 1 for adults",
+          "type": "adult",
+          "price": 10,
+          "fee": 2,
+          "availability": "available",
+          "id": "016ed609-e464-4974-b4fa-dacd55a677bb"
+        }
+      ],
+      "id": "f65f8b03-f80d-427e-9177-43d07ab5bc0d"
+    },
+    {
+      "id": "3725ec10-23ea-4e73-beba-cdf2bc620f35",
+      "name": "A new event",
+      "date": "2025-02-08T07:05:39.485Z",
+      "description": "A new event description",
+      "tickets": [
+        {
+          "id": "e449a867-0726-4bf5-8c27-09f1209cbb10",
+          "name": "Ticket 1 for adults",
+          "type": "adult",
+          "price": 10,
+          "fee": 2,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "ab7a4ffe-5ebc-4f48-aecc-fa0875b83d29",
+      "name": "qwdqwd",
+      "date": "2025-02-08T07:45:04.599Z",
+      "description": "qwdqwd",
+      "tickets": [
+        {
+          "id": "15568dfd-d0ab-4ee9-8963-914a6ba37ada",
+          "name": "qwdqw",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "106de4af-5962-49a6-b73c-7db11807d9bb",
+      "name": "qwdqwd",
+      "date": "2025-02-08T07:45:04.599Z",
+      "description": "qwdqwd",
+      "tickets": [
+        {
+          "id": "2a89053d-2af1-4934-9b9c-cd876b92c317",
+          "name": "qwdqw",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "c2e30a1e-9664-42f6-a838-5b7a8566eb46",
+      "name": "qwdqwd",
+      "date": "2025-02-08T07:45:04.599Z",
+      "description": "qwdqwd",
+      "tickets": [
+        {
+          "id": "9baa3f5e-6b38-4371-bf4f-e709b39fa8cd",
+          "name": "qwdqw",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "bf8706ab-ed8b-48ce-8f9c-9da61d00d3c2",
+      "name": "qwdqwd",
+      "date": "2025-02-08T07:45:04.599Z",
+      "description": "qwdqwd",
+      "tickets": [
+        {
+          "id": "b3c875cf-bbe0-41d7-8f9d-f42a3f7797f5",
+          "name": "qwdqw",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "8261f45d-9fba-445b-878a-c17b16c03ae4",
+      "name": "ewfwe",
+      "date": "2025-02-08T07:49:36.680Z",
+      "description": "wef",
+      "tickets": [
+        {
+          "id": "1bca9656-9aef-4b38-8e5d-a9dc39455185",
+          "name": "wefwef",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "0622af45-ac5f-45eb-ab15-6b8cba19fbe4",
+      "name": "ewfwe",
+      "date": "2025-02-08T07:49:36.680Z",
+      "description": "wef",
+      "tickets": [
+        {
+          "id": "0564c2fe-9fc7-4408-b750-fccea9904673",
+          "name": "wefwef",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "id": "14806404-4005-455c-98ba-5d6433042944",
+      "name": "ewfwe",
+      "date": "2025-02-08T07:49:36.680Z",
+      "description": "wef",
+      "tickets": [
+        {
+          "id": "61ecf1b8-01fe-488c-ad0d-d9743abcae40",
+          "name": "wefwef",
+          "type": "adult",
+          "price": 1,
+          "fee": 1,
+          "availability": "available"
+        }
+      ]
+    }
+  ]
 }
