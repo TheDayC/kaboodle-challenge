@@ -1,5 +1,6 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Stack, Typography } from '@mui/material';
 import { FC, ReactNode, useEffect } from 'react';
+import NavigationMenu from './NavigationMenu';
 
 interface PageWrapperProps {
     title: string;
@@ -15,9 +16,12 @@ const PageWrapper: FC<PageWrapperProps> = ({ title, children }) => {
         <>
             <Box sx={{ bgcolor: 'black', width: '100%', py: 2 }}>
                 <Container maxWidth="xl">
-                    <Typography variant="h2" color="white">
-                        Kaboodle Challenge
-                    </Typography>
+                    <Stack direction="column" spacing={2}>
+                        <Typography variant="h2" color="white">
+                            Kaboodle Challenge
+                        </Typography>
+                        <NavigationMenu />
+                    </Stack>
                 </Container>
             </Box>
             <Box sx={{ py: 2 }}>
