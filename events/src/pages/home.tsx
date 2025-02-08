@@ -18,7 +18,7 @@ import { Controller, SubmitHandler, useFieldArray, useForm } from 'react-hook-fo
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon';
-//import { useMutation } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { AddCircle, Publish, RemoveCircle } from '@mui/icons-material';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -49,7 +49,7 @@ const HomePage: FC = () => {
         name: 'tickets',
     });
 
-    /* const postEvent = useMutation({
+    const postEvent = useMutation({
         mutationFn: (data: EventSubmission) => {
             return fetch('/api/events/new', {
                 method: 'POST',
@@ -59,11 +59,11 @@ const HomePage: FC = () => {
                 }),
             });
         },
-    }); */
+    });
 
     const onSubmit: SubmitHandler<EventSubmission> = (data) => {
         console.log('🚀 ~ data:', data);
-        //postEvent.mutate(data);
+        postEvent.mutate(data);
     };
 
     return (
@@ -113,7 +113,7 @@ const HomePage: FC = () => {
                         {fields.map((field, index) => (
                             <Stack key={field.id} direction="column" spacing={2}>
                                 <Stack direction="row" justifyContent="flex-start" alignItems="center">
-                                    <Typography variant="h6">Ticket {index}</Typography>
+                                    <Typography variant="h6">Ticket {index + 1}</Typography>
                                     {index > 0 && (
                                         <IconButton onClick={() => remove(index)} color="error">
                                             <RemoveCircle />
@@ -197,9 +197,6 @@ const HomePage: FC = () => {
                                                 e.target.value = e.target.value.replace(/[^0-9]/g, '');
                                             }}
                                             error={!!errors.tickets?.[index]?.fee}
-                                            onChange={(e) =>
-                                                (e.target.value = e.target.value ? String(Number(e.target.value)) : '')
-                                            }
                                         />
                                     )}
                                 />
