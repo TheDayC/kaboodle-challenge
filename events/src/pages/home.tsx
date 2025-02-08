@@ -1,6 +1,7 @@
 import { ChangeEvent, FC } from 'react';
 import { DateTime } from 'luxon';
 import {
+    Alert,
     Box,
     Button,
     Divider,
@@ -10,6 +11,7 @@ import {
     InputLabel,
     MenuItem,
     Select,
+    Snackbar,
     Stack,
     TextField,
     Typography,
@@ -49,21 +51,31 @@ const HomePage: FC = () => {
         name: 'tickets',
     });
 
-    const postEvent = useMutation({
-        mutationFn: (data: EventSubmission) => {
-            return fetch('/api/events/new', {
+    // Leverage TanStack's mutation hook to handle the await from the fetch and make a triggerable request easily.
+    const eventMutation = useMutation({
+        mutationFn: async (data: EventSubmission) => {
+            return await fetch('/api/events/new', {
                 method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...data,
                     date: data.date.toISO(),
                 }),
-            });
+            }).then((r) => r.json());
         },
     });
 
+    const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
+        // Prevent closing on background click so the user doesn't miss the feedback by accident.
+        if (reason === 'clickaway') return;
+
+        // Reset the event mutation in all other scenarios so that the response is forgotten and the snackbar is removed.
+        eventMutation.reset();
+    };
+
+    // The form handler provides accessibility that web users are used to and provides and easy way to type and handle inputs once validated.
     const onSubmit: SubmitHandler<EventSubmission> = (data) => {
-        console.log('🚀 ~ data:', data);
-        postEvent.mutate(data);
+        eventMutation.mutate(data);
     };
 
     return (
@@ -138,7 +150,7 @@ const HomePage: FC = () => {
                                     control={control}
                                     render={({ field }) => (
                                         <FormControl>
-                                            <InputLabel id="select-label">Type</InputLabel>
+                                            <InputLabel id="select-type-label">Type</InputLabel>
                                             <Select {...field} label="Type" labelId="select-type-label">
                                                 <MenuItem value="adult">Adult</MenuItem>
                                                 <MenuItem value="child">Child</MenuItem>
@@ -205,8 +217,8 @@ const HomePage: FC = () => {
                                     control={control}
                                     render={({ field }) => (
                                         <FormControl>
-                                            <InputLabel id="select-label">Type</InputLabel>
-                                            <Select {...field} label="Type" labelId="select-type-label">
+                                            <InputLabel id="select-availability-label">Availability</InputLabel>
+                                            <Select {...field} label="Availability" labelId="select-availability-label">
                                                 <MenuItem value="available">Available</MenuItem>
                                                 <MenuItem value="sold-out">Sold Out</MenuItem>
                                             </Select>
@@ -227,6 +239,16 @@ const HomePage: FC = () => {
                     </Stack>
                 </form>
             </Box>
+            <Snackbar
+                open={eventMutation.isSuccess || eventMutation.isError}
+                autoHideDuration={5000}
+                onClose={handleClose}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            >
+                <Alert onClose={handleClose} severity="success" variant="filled">
+                    {eventMutation.data ? eventMutation.data.message : ''}
+                </Alert>
+            </Snackbar>
         </PageWrapper>
     );
 };

@@ -16,7 +16,8 @@ export const requestLogger = (req: Request, res: Response, next: NextFunction) =
     next();
 };
 
-export const errorLogger = (err: Error, req: Request, res: Response) => {
+export const errorLogger = (err: Error, req: Request, res: Response, next: NextFunction) => {
     logger.error(`❌ Error: ${err.message}`, { stack: err.stack });
-    res.status(500).json({ error: 'An error occurred!' });
+    res.status(500).json({ message: 'An error occurred!' });
+    next();
 };
