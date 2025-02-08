@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import theme from './theme';
-import Home from './pages/Home';
+import Home from './pages/home';
+import Events from './pages/Events';
 import NotFound from './pages/NotFound';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
@@ -16,6 +17,7 @@ const App = () => {
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/events" element={<Events />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Router>

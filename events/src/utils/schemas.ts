@@ -1,12 +1,24 @@
 import { DateTime } from 'luxon';
 import { z } from 'zod';
 
+export const ticketSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    type: z.string(),
+    price: z.number(),
+    fee: z.number(),
+    availability: z.string(),
+});
+
 export const eventSchema = z.object({
-    id: z.number(),
+    id: z.string(),
     name: z.string(),
     date: z.string(),
     description: z.string(),
+    tickets: z.array(ticketSchema),
 });
+
+export const eventsSchema = z.array(eventSchema);
 
 // Before we POST our event date as an ISO string it's held as a Luxon DateTime.
 // This custom schema lets us validate that specific type with Zod and in turn via RHF to pass the correct value type.
