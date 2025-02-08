@@ -54,7 +54,7 @@ const HomePage: FC = () => {
     // Leverage TanStack's mutation hook to handle the await from the fetch and make a triggerable request easily.
     const eventMutation = useMutation({
         mutationFn: async (data: EventSubmission) => {
-            return await fetch('/api/events/new', {
+            return await fetch('http://localhost:3001/events/new', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

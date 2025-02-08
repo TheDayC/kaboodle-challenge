@@ -1,5 +1,5 @@
 # Begin with an initial Node builder stage.
-FROM node:22.13.1-alpine AS builder
+FROM --platform=linux/arm64 node:22.13.1-alpine AS builder
 
 # Set the current working directory and copy all fies from the dev dir to ./app.
 WORKDIR /app

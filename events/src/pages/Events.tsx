@@ -41,7 +41,7 @@ const EventsPage: FC = () => {
     const eventsQuery = useQuery({
         queryKey: ['events'],
         queryFn: async () => {
-            const res = await fetch('/api/events', {
+            const res = await fetch('http://localhost:3001/events', {
                 method: 'GET',
             }).then((r) => r.json());
 

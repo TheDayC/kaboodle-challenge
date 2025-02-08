@@ -1,6 +1,6 @@
-# Events UI Application
+# Events API Application
 
-A Vite application using a React + Typescript stack featuring ESLint and Prettier for code linting and formatting.
+A Node application using a ExpressJS + Typescript stack featuring ESLint and Prettier for code linting and formatting.
 
 Before running any of the following commands it's recommended that you have [Volta](https://docs.volta.sh/guide/getting-started) installed to manage your Node versions per application and for you to run `npm install` before any other NPM script.
 
@@ -20,8 +20,8 @@ To build this application for production run:
 npm run build
 ```
 
-To preview the production application once built run:
+To view the production build run:
 
 ```bash
-npm run preview
+npm run start
 ```
