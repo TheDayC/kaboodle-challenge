@@ -66,3 +66,7 @@ I came up against some build issues whilst writing the API that I'd like to avoi
 ### Database
 
 The database is the most barebones of the three applications and I'd upgrade this to a fully fledged database system. I would pick PostgreSQL for a scalable application and MongoDB (NoSQL) for a fast prototype or small scale application, I would then serve both with PrismaIO from the API to provide consistent SDK / interface between the API and the chosen DB technology.
+
+### Testing
+
+A major omission from this challenge is testing. I decided to avoid testing due to the lack of requirement and the large time investment, but if I were to add this I would choose 3 tools to provide code assurance. Firstly, I'd implement Jest as a testing framework across both the UI and API to allow unit testing across both systems and provide a familiar library for developers to begin their testing baseline from. Secondly, I'd add Playwright in the UI for integration and E2E testing. Having a lot of experience with both Cypress and Playwright I side with the latter as a more stable and efficient piece of software that provides simple UI visualisation when testing components or user journeys, and a familiar Jest-like syntax. Optionally, should developers want a simpler, cli focused implementation than Playwright for specifically integration testing, React Testing Library is also a fine option that slots nicely into Jest in the UI, removes the overhead of Playwright and provides a deep library of functions that enable accurate, user centric testing approaches.
